@@ -1,0 +1,17 @@
+FROM ubuntu:18.04
+
+WORKDIR /root
+
+RUN \
+	apt update -y && \
+	apt-get install sudo && \
+	sudo apt-get install -y vim  && \
+	sudo apt-get install -y wget && \
+	sudo apt-get install -y curl && \
+	sudo apt-get install -y fish && \
+	sudo apt-get install -y git  && \
+	sudo apt-get install -y keychain
+
+# docker build -f Dockerfile-git-ssh -t="git_ssh:v1.0" ./ && docker run --rm -v /share/Public/matt/:/mnt/mattchou -it git_ssh:v1.0 /bin/bash;
+
+# docker run -d --rm -v /share/Public/matt/:/mnt/mattchou -it git_ssh:v1.0 /bin/bash && docker exec -it <ID> /usr/bin/fish

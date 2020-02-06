@@ -1,0 +1,12 @@
+FROM ubuntu:18.04
+
+WORKDIR /root
+
+RUN \
+	apt update -y && \
+	apt-get install sudo && \
+	sudo apt-get install -y vim  && \
+	sudo apt-get install -y wget && \
+	sudo apt-get install -y curl
+
+# docker build -f Dockerfile-base-u18 -t="ubuntu18:v18.04" ./ && docker run --rm -v /share/Public/matt/:/mnt/mattchou -it ubuntu18:v18.04 /bin/bash;
